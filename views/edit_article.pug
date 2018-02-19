@@ -1,0 +1,19 @@
+extends layout.pug
+block content
+  h1 #{page_title}
+  form(method="POST" , action="/articles/edit/"+article._id)
+    #form-group
+      label Title:
+      input.form-control(name='title',type='text',value= article.title)
+    #form-group
+      label Author:
+      input.form-control(type="text",name="author",value= article.author)
+    #form-group 
+      label Image URL:
+      input.form-control(type="url",name="imgUrl", value= article.image)
+    #form-group
+      label Body:
+      textarea.form-control(name="body") #{article.body}
+    br
+    #form-group
+      input.btn.btn-info(type="submit", value="Update Changes")

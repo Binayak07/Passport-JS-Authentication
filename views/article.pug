@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content
+  h1= article.title
+  br
+  h4 Written By: #{article.author}
+  br
+  p= article.body
+  br
+  img.thumbnail(src= article.image, alt="No Image Set")
+  br
+  br
+  a.btn.btn-success(href='/articles/edit/'+article._id) Edit
+  a.btn.btn-danger.delete-article(href="#" style="margin-left:3em", data-id= article._id) Delete

@@ -1,0 +1,19 @@
+extends layout.pug
+block content
+  h1 #{title}
+  form(method="POST" , action="/articles/add")
+    #form-group
+      label Title:
+      input.form-control(name='title',type='text',required=true)
+    #form-group
+      label Author:
+      input.form-control(name="author",type='text',required=true)
+    #form-group
+      label Image URL:
+      input.form-control(type="url",required=true,name="imgUrl")
+    #form-group
+      label Body:
+      textarea.form-control(name="body",required=true)
+    br
+    input.btn.btn-primary(type='submit',value='Add Article')
+    a.btn.btn-danger(href='/', style='margin:3em') Back
